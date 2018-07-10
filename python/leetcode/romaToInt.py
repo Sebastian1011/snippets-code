@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-class Solution:
+from unittest import TestCase
+class Solution(TestCase):
     def romanToInt(self, s):
         """
         :type s: str
@@ -26,24 +27,14 @@ class Solution:
         }
         return switcher.get(k, 0)
 
+    def test(self):
+        self.assertEqual(self.romanToInt('III'), 3)
+        self.assertEqual(self.romanToInt('IV'), 4)
+        self.assertEqual(self.romanToInt('LVIII'), 58)
 
 if __name__ == '__main__':
     s = Solution()
-    v1 = s.romanToInt('III')
-    if v1 == 3:
-        print('pass')
-    else:
-        print('fail')
-    v2 = s.romanToInt('IV')
-    if v2 == 4:
-        print('pass')
-    else:
-        print('fail')
-    v3 = s.romanToInt('LVIII')
-    if v3 == 3:
-        print('pass')
-    else:
-        print('fail')
+    s.test()
 
 
         
