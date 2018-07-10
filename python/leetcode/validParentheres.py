@@ -11,22 +11,32 @@ class Solution(unittest.TestCase):
         if s == '':
             return True
         d = len(s)%2
-        print('d is : ', d)
         if d > 0:
             return False
-        l = len(s)
-        for i in range(int(l/2)):
-            c = s[i]
-            p = self.pair_map(c)
-            if s[ l - 1 - i] != p:
-                return False
-        return True
-        
+        l = []
+        for c in s:
+            if self.isLeft(c):
+                l.append(c)
+            else:
+                if len(l) == 0:
+                    return False
+                p = self.pair_map(c)
+                if p == l[-1]:
+                    l.pop()
+                else:
+                    return False
+        return len(l) == 0
+
+
+    def isLeft(self, s):
+        v = self.pair_map(s)
+        return v == None
+
     def pair_map(self, s):
         switcher = {
-            '{': '}',
-            '[': ']',
-            '(': ')'
+            '}': '{',
+            ']': '[',
+            ')': '('
         }
         return switcher.get(s, None)
 
@@ -34,6 +44,7 @@ class Solution(unittest.TestCase):
         self.assertEqual(self.isValid("()"), True)
         self.assertEqual(self.isValid("()[]{}"), True)
         self.assertEqual(self.isValid("([)]"), False)
+
 
 if __name__ == '__main__':
     s = Solution()
