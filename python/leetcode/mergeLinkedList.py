@@ -59,11 +59,11 @@ class Solution(unittest.TestCase):
                 tmp.next = ListNode(j)
                 tmp = tmp.next
         l = self.mergeTwoLists(l1,l2)
+        ls = []
         while l != None: 
-            print(l.val)
+            ls.append(l.val)
             l = l.next
-
-                
+        self.assertEqual(ls, [1,1,2,3,4,4])
         pass
 
 
