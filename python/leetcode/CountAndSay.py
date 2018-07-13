@@ -30,14 +30,6 @@ class Solution(unittest.TestCase):
         return r
         
     def test(self):
-        # v1 = self.countAndSay(1)
-        # self.assertEqual(v1, '1')
-        # v2 = self.countAndSay(2)
-        # self.assertEqual(v2, '11')
-        # v3 = self.countAndSay(3)
-        # self.assertEqual(v3, '21')
-        # v4 = self.countAndSay(4)
-        # self.assertEqual(v4, '1211')
         v5 = self.countAndSay(5)
         self.assertEqual(v5, '111221')
         v6 = self.countAndSay(6)
