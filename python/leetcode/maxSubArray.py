@@ -9,7 +9,12 @@ class Solution(unittest.TestCase):
         """
         maxSum = 0
         j = 0
+        total = 0
         for i in nums:
+            total += i
+            if total > maxSum:
+                maxSum = total
+                j = 
 
 
     def test(self):
