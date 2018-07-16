@@ -7,14 +7,17 @@ class Solution(unittest.TestCase):
         :type nums: List[int]
         :rtype: int
         """
-        maxSum = 0
-        j = 0
-        total = 0
-        for i in nums:
-            total += i
-            if total > maxSum:
-                maxSum = total
-                j = 
+        if len(nums) == 0:
+            return 0
+        maxCurrent = nums[0]
+        maxRtn = nums[0]
+        i = 1
+        while i < len(nums):
+            maxCurrent = max(nums[i] , nums[i] + maxCurrent)
+            maxRtn = max(maxRtn, maxCurrent)
+            i += 1
+        return maxRtn
+
 
 
     def test(self):
