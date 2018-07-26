@@ -12,4 +12,4 @@ function foo(name, age) {
 
 var fooBind = foo.bind(v, 'Kevin')
 
-console.log(fooBind(18));
+console.log(fooBind(18)); // kevin 18
